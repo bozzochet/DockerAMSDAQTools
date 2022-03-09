@@ -3,3 +3,4 @@ emacs
 subversion
 openssh-server
 net-tools
+inetutils-ping

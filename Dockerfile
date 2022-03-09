@@ -1,4 +1,3 @@
-
 FROM rootproject/root:latest
 
 LABEL maintainer.name="Matteo Duranti"
@@ -16,6 +15,9 @@ RUN apt-get update -qq \
 USER root
 ENV ROOTHOME /root
 WORKDIR ${ROOTHOME}
+
+COPY entrypoint.sh /
+RUN  chmod +x /entrypoint.sh
 
 # Install and configure tsocks
 COPY tsocks-1.8beta5.tar.gz tsocks-1.8beta5.tar.gz
@@ -52,5 +54,7 @@ WORKDIR ${HOME}/current_dir
 ## Checkout JMDCCommander
 #RUN svn checkout https://svn.code.sf.net/p/jmdccommander/code/trunk JMDCCommander
 
+ENTRYPOINT ["/entrypoint.sh"]
+
 #CMD ["root", "-b"]
-CMD exec /bin/bash
+#CMD exec /bin/bash
