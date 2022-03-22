@@ -35,6 +35,21 @@ docker run --rm -it -v `pwd`:/home/studente/current_dir bozzochet/jmdccommander:
 ```
 The `-v` option tells Docker to mount the home directory (`~`) to `/userhome` in the container. ~~`--user $(id -u)` signs us in with the same userid as in the host in order to allow reading/writing to the mounted directory. This is not necessary on Windows. Mac and Windows users does however have to mark the drives or areas they want to mount as shared in the Docker application under settings.~~
 
+To use the host network as it is:
+```
+docker run --net=host --rm -it bozzochet/jmdccommander:latest
+```
+
+To enter the container as root (there's no sudo for the default user, so no package installing allowed):
+```
+docker run --user root --rm -it bozzochet/jmdccommander:latest
+```
+
+** The suggested way of running, to allow also the creation of the lxplus ssh socket, is**:
+```
+docker run --net=host --user root --rm -it -v `pwd`:/home/testsys/current_dir bozzochet/jmdccommander:latest
+```
+
 ### Enabling graphics
 
 ##### Linux
