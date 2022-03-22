@@ -51,8 +51,8 @@ RUN ln -s ${HOME}/current_dir/.root_hist ./
 # Our (final) working dir is the directory "mounted" from outside the container: docker run --rm -it -v `pwd`:/home/testsys/current_dir bozzochet/jmdccommander:latest
 WORKDIR ${HOME}/current_dir
 
-## Checkout JMDCCommander
-#RUN svn checkout https://svn.code.sf.net/p/jmdccommander/code/trunk JMDCCommander
+## Checkout AMSDAQ
+#RUN svn checkout svn checkout https://svn.code.sf.net/p/amsdaq/code/DAQ/DAQ AMSDAQ
 
 ENTRYPOINT ["/entrypoint.sh"]
 
