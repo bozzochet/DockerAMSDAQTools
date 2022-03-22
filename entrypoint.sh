@@ -6,7 +6,7 @@ DIRECTORY="AMSDAQ"
 if [ ! -d "$DIRECTORY" ]
 then
     # Control will enter here if $DIRECTORY doesn't exist.
-    svn checkout svn checkout https://svn.code.sf.net/p/amsdaq/code/DAQ/DAQ AMSDAQ
+    svn checkout https://svn.code.sf.net/p/amsdaq/code/trunkBT/DAQ/DAQ AMSDAQ
     cd AMSDAQ
     make clean; make
 else
