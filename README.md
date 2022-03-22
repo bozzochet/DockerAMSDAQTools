@@ -45,7 +45,7 @@ To enter the container as root (there's no sudo for the default user, so no pack
 docker run --user root --rm -it bozzochet/jmdccommander:latest
 ```
 
-** The suggested way of running, to allow also the creation of the lxplus ssh socket, is**:
+**The suggested way of running, to allow also the creation of the lxplus ssh socket, is**:
 ```
 docker run --net=host --user root --rm -it -v `pwd`:/home/testsys/current_dir bozzochet/jmdccommander:latest
 ```
